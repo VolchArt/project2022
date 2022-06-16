@@ -62,3 +62,5 @@
 // let result = alert( `${answers[0]}, Ваше предполагаемое имя: ${answers[2] + ageSUM}`);
 
 // console.log(result);
+
+//3 commit
