@@ -64,3 +64,25 @@
 // console.log(result);
 
 //3 commit
+ "use strict";
+
+const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', "");
+
+let personalMovieDB = {
+    count : numberOfFilms,
+    movies : {
+
+    },
+    actots : {
+
+    },
+    genres : [],
+    privat : false
+};
+
+personalMovieDB.movies.last = prompt ('Один из последних просмотренных фильмов?', '');
+personalMovieDB.movies.score = prompt ('На сколько оцените его?', '');
+
+console.log (personalMovieDB.movies);
+
+
