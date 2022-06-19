@@ -80,9 +80,17 @@ let personalMovieDB = {
     privat : false
 };
 
-personalMovieDB.movies.last = prompt ('Один из последних просмотренных фильмов?', '');
-personalMovieDB.movies.score = prompt ('На сколько оцените его?', '');
+// personalMovieDB.movies.last = prompt ('Один из последних просмотренных фильмов?', '');
+// personalMovieDB.movies.score = prompt ('На сколько оцените его?', '');
+// personalMovieDB.movies.last1 = prompt ('Один из последних просмотренных фильмов?', '');
+// personalMovieDB.movies.score1 = prompt ('На сколько оцените его?', '');
+ const last = prompt ('Один из последних просмотренных фильмов?', ''),
+ score = prompt ('На сколько оцените его?', ''),
+ last1 = prompt('Один из последних просмотренных фильмов?', ''),
+ score1 = prompt('На сколько оцените его?', '');
 
-console.log (personalMovieDB.movies);
+personalMovieDB.movies[last] = score;
+personalMovieDB.movies[last1] = score1;
+console.log (personalMovieDB);
 
 
