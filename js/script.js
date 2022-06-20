@@ -64,33 +64,63 @@
 // console.log(result);
 
 //3 commit
- "use strict";
+//  "use strict";
 
-const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', "");
+// const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', "");
 
-let personalMovieDB = {
-    count : numberOfFilms,
-    movies : {
+// let personalMovieDB = {
+//     count : numberOfFilms,
+//     movies : {
 
-    },
-    actots : {
+//     },
+//     actots : {
 
-    },
-    genres : [],
-    privat : false
-};
+//     },
+//     genres : [],
+//     privat : false
+// };
 
-// personalMovieDB.movies.last = prompt ('Один из последних просмотренных фильмов?', '');
-// personalMovieDB.movies.score = prompt ('На сколько оцените его?', '');
-// personalMovieDB.movies.last1 = prompt ('Один из последних просмотренных фильмов?', '');
-// personalMovieDB.movies.score1 = prompt ('На сколько оцените его?', '');
- const last = prompt ('Один из последних просмотренных фильмов?', ''),
- score = prompt ('На сколько оцените его?', ''),
- last1 = prompt('Один из последних просмотренных фильмов?', ''),
- score1 = prompt('На сколько оцените его?', '');
+// // personalMovieDB.movies.last = prompt ('Один из последних просмотренных фильмов?', '');
+// // personalMovieDB.movies.score = prompt ('На сколько оцените его?', '');
+// // personalMovieDB.movies.last1 = prompt ('Один из последних просмотренных фильмов?', '');
+// // personalMovieDB.movies.score1 = prompt ('На сколько оцените его?', '');
+//  const last = prompt ('Один из последних просмотренных фильмов?', ''),
+//  score = prompt ('На сколько оцените его?', ''),
+//  last1 = prompt('Один из последних просмотренных фильмов?', ''),
+//  score1 = prompt('На сколько оцените его?', '');
 
-personalMovieDB.movies[last] = score;
-personalMovieDB.movies[last1] = score1;
-console.log (personalMovieDB);
+// personalMovieDB.movies[last] = score;
+// personalMovieDB.movies[last1] = score1;
+// console.log (personalMovieDB);
 
+"use strict";
 
+// if (4==9) { //условие превращает любой тип данных в булиновый
+//     console.log('Ok');
+// } else {
+//     console.log ('Error');
+// }
+
+//const num = 100;
+// if (num < 49) {
+//     console.log('Error');
+// } else if (num > 100) {
+//     console.log('Error too much');
+// } else {
+//     console.log('Ok!');
+// }
+
+//(num === 50) ? console.log('Ok!') : console.log('Error');
+
+const num = 100;
+switch (num) { //всегда строгое соответствие
+    case 49:
+        console.log('Error');
+        break;
+    case 100:
+        console.log('Too much')
+        break;
+    case 50:
+        console.log('Great!');
+
+}
