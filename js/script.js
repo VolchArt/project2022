@@ -116,7 +116,6 @@
 
 //(num === 50) ? console.log('Ok!') : console.log('Error');
 
-<<<<<<< HEAD
 // const num = 100;
 // switch (num) { //всегда строгое соответствие
 //     case 49:
@@ -131,17 +130,3 @@
 // }
 
 //урок 21 логические операторы.
-=======
-const num = 100;
-switch (num) { //всегда строгое соответствие
-    case 49:
-        console.log('Error');
-        break;
-    case 100:
-        console.log('Too much')
-        break;
-    case 50:
-        console.log('Great!');
-
-}
->>>>>>> 2ef9209967468f01803ee6316ad70bb96c902011
