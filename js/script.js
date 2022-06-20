@@ -93,7 +93,11 @@
 // personalMovieDB.movies[last1] = score1;
 // console.log (personalMovieDB);
 
+<<<<<<< HEAD
 // "use strict"; //урок 20 условия
+=======
+"use strict";
+>>>>>>> 2ef9209967468f01803ee6316ad70bb96c902011
 
 // if (4==9) { //условие превращает любой тип данных в булиновый
 //     console.log('Ok');
@@ -112,6 +116,7 @@
 
 //(num === 50) ? console.log('Ok!') : console.log('Error');
 
+<<<<<<< HEAD
 // const num = 100;
 // switch (num) { //всегда строгое соответствие
 //     case 49:
@@ -126,3 +131,17 @@
 // }
 
 //урок 21 логические операторы.
+=======
+const num = 100;
+switch (num) { //всегда строгое соответствие
+    case 49:
+        console.log('Error');
+        break;
+    case 100:
+        console.log('Too much')
+        break;
+    case 50:
+        console.log('Great!');
+
+}
+>>>>>>> 2ef9209967468f01803ee6316ad70bb96c902011
