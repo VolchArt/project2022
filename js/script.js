@@ -128,3 +128,65 @@
 //урок 21 логические операторы.
 // оператор && всегда возвращает первое ложное значение если оно есть, дальше код не идет
 // если все аргументы true, то он возвращает последний такой аргумент. "И" запинается на лжи, "Или запинается на правде"
+
+//урок 22 циклы + урок 23. Практические задачи
+
+"use strict";
+//ЗАДАНИЕ 1
+//let result = 4;
+// while (result < 10) {
+//     result++;
+//     console.log(result);
+// }
+
+// do {
+//     result++;
+//     console.log(result);
+// } while (result < 10);
+
+// for (let i=5; i<=10; i++) {
+//     console.log(i);
+// }
+//ЗАДАНИЕ 2
+// for (let i = 20; i >= 10; i--) {
+
+//     if (i === 13) {
+//         break;
+//     }
+//     console.log(i);
+// }
+//ЗАДАНИЕ 3
+// for (let i = 2; i <= 10; i++) {
+
+//     if (i % 2 == true) {
+//         continue;
+//     } 
+//         console.log(i);
+// }
+
+
+//ЗАДАНИЕ 4
+// for (let i = 2; i <= 16; i++) {
+//     if (i % 2 === 0) {
+//         continue;
+//     } else {
+//         console.log(i);
+//     }
+// }
+
+// let i = 2;
+// while (i < 16) {
+//     i++;
+//     if (i % 2 === 0) {
+//         continue;
+//     } else {
+//         console.log(i);
+//     }
+    
+// }
+
+// let result = [];
+// for (let i = 5; i <= 10; i++) {
+//     result[i - 5] = i;
+// }
+// console.log(result);
