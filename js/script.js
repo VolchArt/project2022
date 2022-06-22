@@ -131,7 +131,7 @@
 
 //урок 22 циклы + урок 23. Практические задачи
 
-"use strict";
+//"use strict";
 //ЗАДАНИЕ 1
 //let result = 4;
 // while (result < 10) {
@@ -188,5 +188,31 @@
 // let result = [];
 // for (let i = 5; i <= 10; i++) {
 //     result[i - 5] = i;
+// }
+// console.log(result);
+
+//НИКИТЫ ПРАКТИКА
+// "use strict";
+
+// let result = '';
+// const lenght = 7;
+
+// for (let i = 1; i < lenght; i++) {
+//     for (let j = 0; j < i; j++) {
+//         result += "*";
+        
+//     }
+//     if (i === lenght-1) {
+//         result += '\n';
+//         for (let k = lenght-1; k >= 0; k--) {
+//             for (let l = 0; l<k; l++) {
+//                 result+="*";
+//             }
+//             result += "*";
+//             result += '\n';
+//         }
+        
+//     }
+//     result += '\n';
 // }
 // console.log(result);
