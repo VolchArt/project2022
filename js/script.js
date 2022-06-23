@@ -253,12 +253,35 @@
 // }
 
 //ЗАДАНИЕ 3
-"use strict";
-const data = [5, 10, 'Shopping', 20, 'Homework'];
-const result = [];
+// "use strict";
+// const data = [5, 10, 'Shopping', 20, 'Homework'];
+// const result = [];
 
-for (let i = 1; i <= data.length; i++) {
-    result[i-1]=data[data.length-i];
+// for (let i = 1; i <= data.length; i++) {
+//     result[i-1]=data[data.length-i];
   
+// }
+// console.log(result);
+
+//Практика с **
+
+"use strict";
+const lines = 5;
+let result = '';
+// result +="*";
+// result +="\n";
+first: for (let i=1; i <= lines+1; i++) {
+    // result = "*";
+    // result +="\n";
+    for (let j=0; j<i;j++ ) {
+        if (j%2===0) { 
+            continue;
+        } else {
+    
+        result +="**";
+        result +="\n";
+        }
+    }
+    result +="\n";
 }
-console.log(result);
+console.log (result);
