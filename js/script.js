@@ -231,17 +231,17 @@
 // console.log(result);
 
 //ЗАДАНИЕ2
-"use strict";
-const data = [5, 10, 'Shopping', 20, 'Homework'];
+// "use strict";
+// const data = [5, 10, 'Shopping', 20, 'Homework'];
 
-for (let i = 0; i<data.length; i++) {
-    if (typeof data[i] === 'string') {
-        data[i] += ' - done';
-    } else {
-    data[i]= data[i] * 2;
-    }
-}
-console.log(data);
+// for (let i = 0; i<data.length; i++) {
+//     if (typeof data[i] === 'string') {
+//         data[i] += ' - done';
+//     } else {
+//     data[i]= data[i] * 2;
+//     }
+// }
+// console.log(data);
 //ЭКСПЕРИМЕНТЫ
 // let a='2';
 // const arr =  [0,'2'];
@@ -251,3 +251,14 @@ console.log(data);
 // } else {
 //     console.log (typeof arr[1], typeof a );
 // }
+
+//ЗАДАНИЕ 3
+"use strict";
+const data = [5, 10, 'Shopping', 20, 'Homework'];
+const result = [];
+
+for (let i = 1; i <= data.length; i++) {
+    result[i-1]=data[data.length-i];
+  
+}
+console.log(result);
