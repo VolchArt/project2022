@@ -277,3 +277,45 @@
 //     result += "\n";
 // }
 // console.log(result);
+
+//УРОК 24 ПРАКТИКА
+ "use strict";
+
+ const questions = ['Сколько фильмов вы уже посмотрели?',
+     'Один из последних просмотренных фильмов?',
+     'На сколько оцените его?'
+ ];
+ let personalMovieDB = {
+     count: '',
+     movies: {
+
+     },
+     actors: {
+
+     },
+     genres: [],
+     privat: false
+ };
+
+ first: for (let i = 0; i < 2; i++) {
+     if (i==0 && personalMovieDB.count == '') {
+         personalMovieDB.count = prompt(questions[i] + '');
+         personalMovieDB.movies[prompt(questions[i + 1] + '')] = prompt(questions[i + 2] + '');
+     } else {
+         //if (i >= 1 && personalMovieDB.count != '')  {
+             personalMovieDB.movies[prompt(questions[i] + '')] = prompt(questions[i + 1] + '');
+         //}
+     }
+     if (personalMovieDB.count != null && personalMovieDB.movies !=null && personalMovieDB.movies !='' && personalMovieDB.count !='') {
+        console.log('Great!');
+     } else {
+        console.log ('Error');
+        i--;
+     }
+ }
+ console.log(personalMovieDB.movies);
+ console.log(personalMovieDB.count);
+
+// personalMovieDB.movies[last] = score;
+// personalMovieDB.movies[last1] = score1;
+// console.log (personalMovieDB);
