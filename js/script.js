@@ -264,24 +264,16 @@
 // console.log(result);
 
 //Практика с **
+// const lines = 5;
+// let result = '';
 
-"use strict";
-const lines = 5;
-let result = '';
-// result +="*";
-// result +="\n";
-first: for (let i=1; i <= lines+1; i++) {
-    // result = "*";
-    // result +="\n";
-    for (let j=0; j<i;j++ ) {
-        if (j%2===0) { 
-            continue;
-        } else {
-    
-        result +="**";
-        result +="\n";
-        }
-    }
-    result +="\n";
-}
-console.log (result);
+// for (let i = 0; i<=lines;i++) {
+//     for (let j = 0; j<lines-i;j++) {
+//         result += " ";
+//     }
+//     for (let k = 0; k <2*i+1; k++) {
+//         result +="*";
+//     }
+//     result += "\n";
+// }
+// console.log(result);
