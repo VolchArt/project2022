@@ -279,6 +279,49 @@
 // console.log(result);
 
 //УРОК 24 ПРАКТИКА
+//  "use strict";
+
+//  const questions = ['Сколько фильмов вы уже посмотрели?',
+//      'Один из последних просмотренных фильмов?',
+//      'На сколько оцените его?'
+//  ];
+//  let personalMovieDB = {
+//      count: '',
+//      movies: {
+
+//      },
+//      actors: {
+
+//      },
+//      genres: [],
+//      privat: false
+//  };
+
+//  first: for (let i = 0; i < 2; i++) {
+//      if (i==0) {
+//          personalMovieDB.count = prompt(questions[i] + '');
+//          personalMovieDB.movies[prompt(questions[i + 1] + '')] = prompt(questions[i + 2] + '');
+//      } else {
+//          //if (i >= 1 && personalMovieDB.count != '')  {
+//              personalMovieDB.movies[prompt(questions[i] + '')] = prompt(questions[i + 1] + '');
+//          //}
+//      }
+//     //  if (personalMovieDB.count != null || personalMovieDB.movies !=null || personalMovieDB.movies !='' || personalMovieDB.count !='') {
+//     //     console.log('Great!');
+//     //  } else {
+//     //     console.log ('Error');
+//     //     i--;
+//     //  }
+//  }
+//  console.log(personalMovieDB.movies);
+//  console.log(personalMovieDB.count);
+
+// personalMovieDB.movies[last] = score;
+// personalMovieDB.movies[last1] = score1;
+// console.log (personalMovieDB);
+
+//Практика по учебнику, урок 24
+
  "use strict";
 
  const questions = ['Сколько фильмов вы уже посмотрели?',
@@ -297,25 +340,27 @@
      privat: false
  };
 
- first: for (let i = 0; i < 2; i++) {
-     if (i==0 && personalMovieDB.count == '') {
-         personalMovieDB.count = prompt(questions[i] + '');
-         personalMovieDB.movies[prompt(questions[i + 1] + '')] = prompt(questions[i + 2] + '');
+ const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели', '');
+ personalMovieDB.count = numberOfFilms;
+ for (let i = 0; i < 2; i++) {
+     const whatFilm = prompt('Один из последних просмотренных фильмов?', ''),
+         filmScore = prompt('На сколько оцените его', '');
+     if (whatFilm != null && whatFilm != '' && filmScore != null && filmScore != '' && whatFilm.length < 50) {
+         personalMovieDB.movies[whatFilm] = filmScore;
+         console.log('Done');
      } else {
-         //if (i >= 1 && personalMovieDB.count != '')  {
-             personalMovieDB.movies[prompt(questions[i] + '')] = prompt(questions[i + 1] + '');
-         //}
-     }
-     if (personalMovieDB.count != null && personalMovieDB.movies !=null && personalMovieDB.movies !='' && personalMovieDB.count !='') {
-        console.log('Great!');
-     } else {
-        console.log ('Error');
-        i--;
+         i--;
+         console.log('Error');
      }
  }
- console.log(personalMovieDB.movies);
  console.log(personalMovieDB.count);
-
-// personalMovieDB.movies[last] = score;
-// personalMovieDB.movies[last1] = score1;
-// console.log (personalMovieDB);
+ if (personalMovieDB.count < 10) {
+    console.log ('Мало фильмов'); 
+ } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+    console.log ('Нормально!');
+ } else if (personalMovieDB.count >= 30) {
+    console.log ('Ого как много');
+ } else {
+    console.log('Ошибка');
+ }
+ console.log(personalMovieDB);
