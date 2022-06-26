@@ -322,45 +322,56 @@
 
 //Практика по учебнику, урок 24
 
- "use strict";
+//  "use strict";
 
- const questions = ['Сколько фильмов вы уже посмотрели?',
-     'Один из последних просмотренных фильмов?',
-     'На сколько оцените его?'
- ];
- let personalMovieDB = {
-     count: '',
-     movies: {
+//  const questions = ['Сколько фильмов вы уже посмотрели?',
+//      'Один из последних просмотренных фильмов?',
+//      'На сколько оцените его?'
+//  ];
+//  let personalMovieDB = {
+//      count: '',
+//      movies: {
 
-     },
-     actors: {
+//      },
+//      actors: {
 
-     },
-     genres: [],
-     privat: false
- };
+//      },
+//      genres: [],
+//      privat: false
+//  };
 
- const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели', '');
- personalMovieDB.count = numberOfFilms;
- for (let i = 0; i < 2; i++) {
-     const whatFilm = prompt('Один из последних просмотренных фильмов?', ''),
-         filmScore = prompt('На сколько оцените его', '');
-     if (whatFilm != null && whatFilm != '' && filmScore != null && filmScore != '' && whatFilm.length < 50) {
-         personalMovieDB.movies[whatFilm] = filmScore;
-         console.log('Done');
-     } else {
-         i--;
-         console.log('Error');
-     }
- }
- console.log(personalMovieDB.count);
- if (personalMovieDB.count < 10) {
-    console.log ('Мало фильмов'); 
- } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-    console.log ('Нормально!');
- } else if (personalMovieDB.count >= 30) {
-    console.log ('Ого как много');
- } else {
-    console.log('Ошибка');
- }
- console.log(personalMovieDB);
+//  const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели', '');
+//  personalMovieDB.count = numberOfFilms;
+//  for (let i = 0; i < 2; i++) {
+//      const whatFilm = prompt('Один из последних просмотренных фильмов?', ''),
+//          filmScore = prompt('На сколько оцените его', '');
+//      if (whatFilm != null && whatFilm != '' && filmScore != null && filmScore != '' && whatFilm.length < 50) {
+//          personalMovieDB.movies[whatFilm] = filmScore;
+//          console.log('Done');
+//      } else {
+//          i--;
+//          console.log('Error');
+//      }
+//  }
+//  console.log(personalMovieDB.count);
+//  if (personalMovieDB.count < 10) {
+//     console.log ('Мало фильмов'); 
+//  } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//     console.log ('Нормально!');
+//  } else if (personalMovieDB.count >= 30) {
+//     console.log ('Ого как много');
+//  } else {
+//     console.log('Ошибка');
+//  }
+//  console.log(personalMovieDB);
+
+//УРОК 25-27 ПРАКТИКА
+"use strict";
+
+let nameTask = prompt ('What is your name?' + ' ');
+function sayHello (nameUser) {
+    return 'Привет, ' + nameUser;
+}
+
+sayHello();
+console.log(sayHello(nameTask));
