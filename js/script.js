@@ -366,12 +366,50 @@
 //  console.log(personalMovieDB);
 
 //УРОК 25-27 ПРАКТИКА
+//первая задача
+// "use strict";
+
+// let nameTask = prompt ('What is your name?' + ' ');
+// function sayHello (nameUser) {
+//     return 'Привет, ' + nameUser;
+// }
+
+// sayHello();
+// console.log(sayHello(nameTask));
+
+//вторая задача
+// "use strict";
+// let a = [];
+// function returnNeighboringNumbers (number) {
+// a[0]=number-1; a[1]=number; a[2]=number+1;
+// return a;
+// }
+// returnNeighboringNumbers(4);
+// console.log(a);
+
+//третья задача
 "use strict";
 
-let nameTask = prompt ('What is your name?' + ' ');
-function sayHello (nameUser) {
-    return 'Привет, ' + nameUser;
+function getMathResult(argOne, argTwo) {
+    let b = '';
+    let c = 0;
+    if (typeof argTwo == 'number' && argTwo > 0) {
+        for (let i = 1; i < argTwo + 1; i++) {
+            if (i == argTwo) {
+                b += argOne * i;
+            } else {
+                b += argOne * i + '---';
+            }
+        }
+        return b;
+    } else {
+        c = argOne;
+        return c;
+    }
 }
 
-sayHello();
-console.log(sayHello(nameTask));
+getMathResult();
+console.log(getMathResult(5, 4));
+
+
+
