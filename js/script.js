@@ -473,5 +473,24 @@ function detectPersonalLevel() {
 }
 detectPersonalLevel();
 
+function showMyDB () {
+    if (personalMovieDB.privat == false) {
+        console.log (personalMovieDB);
+    } else {
+        return;
+    }
+}
+showMyDB();
+
+function writeYourGenres () {
+    
+    for (let i = 0; i<3; i++) {
+        let questionFavorite = prompt (`Ваш любимый жанр под номером ${i+1}? `,'');
+        personalMovieDB.genres[i] = questionFavorite;
+    }
+}
+
+writeYourGenres();
+
  console.log(personalMovieDB);
 
