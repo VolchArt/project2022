@@ -388,28 +388,90 @@
 // console.log(a);
 
 //третья задача
-"use strict";
+// "use strict";
 
-function getMathResult(argOne, argTwo) {
-    let b = '';
-    let c = 0;
-    if (typeof argTwo == 'number' && argTwo > 0) {
-        for (let i = 1; i < argTwo + 1; i++) {
-            if (i == argTwo) {
-                b += argOne * i;
-            } else {
-                b += argOne * i + '---';
-            }
-        }
-        return b;
-    } else {
-        c = argOne;
-        return c;
+// function getMathResult(argOne, argTwo) {
+//     let b = '';
+//     let c = 0;
+//     if (typeof argTwo == 'number' && argTwo > 0) {
+//         for (let i = 1; i < argTwo + 1; i++) {
+//             if (i == argTwo) {
+//                 b += argOne * i;
+//             } else {
+//                 b += argOne * i + '---';
+//             }
+//         }
+//         return b;
+//     } else {
+//         c = argOne;
+//         return c;
+//     }
+// }
+
+// getMathResult();
+// console.log(getMathResult(5, 4));
+
+//ПРАКТИКА УРОК 29
+ "use strict";
+
+//  const questions = ['Сколько фильмов вы уже посмотрели?',
+//      'Один из последних просмотренных фильмов?',
+//      'На сколько оцените его?'
+//  ];
+
+let numberOfFilms;
+function start() {
+    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели', '');
+    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели', '');
     }
 }
 
-getMathResult();
-console.log(getMathResult(5, 4));
+start();
 
 
+ let personalMovieDB = {
+     count:numberOfFilms,
+     movies: {
+
+     },
+     actors: {
+
+     },
+     genres: [],
+     privat: false
+ };
+
+
+function rememberMyFilms() {
+    for (let i = 0; i < 2; i++) {
+        const whatFilm = prompt('Один из последних просмотренных фильмов?', ''),
+            filmScore = prompt('На сколько оцените его', '');
+        if (whatFilm != null && whatFilm != '' && filmScore != null && filmScore != '' && whatFilm.length < 50) {
+            personalMovieDB.movies[whatFilm] = filmScore;
+            console.log('Done');
+        } else {
+            i--;
+            console.log('Error');
+        }
+    }
+}
+rememberMyFilms();
+
+function detectPersonalLevel() {
+
+    console.log(personalMovieDB.count);
+    if (personalMovieDB.count < 10) {
+        console.log('Мало фильмов');
+    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+        console.log('Нормально!');
+    } else if (personalMovieDB.count >= 30) {
+        console.log('Ого как много');
+    } else {
+        console.log('Ошибка');
+    }
+}
+detectPersonalLevel();
+
+ console.log(personalMovieDB);
 
