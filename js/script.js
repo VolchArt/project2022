@@ -412,85 +412,109 @@
 // console.log(getMathResult(5, 4));
 
 //ПРАКТИКА УРОК 29
- "use strict";
+ //"use strict";
 
 //  const questions = ['Сколько фильмов вы уже посмотрели?',
 //      'Один из последних просмотренных фильмов?',
 //      'На сколько оцените его?'
 //  ];
 
-let numberOfFilms;
-function start() {
-    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели', '');
-    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели', '');
-    }
-}
+// let numberOfFilms;
+// function start() {
+//     numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели', '');
+//     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+//         numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели', '');
+//     }
+// }
 
-start();
-
-
- let personalMovieDB = {
-     count:numberOfFilms,
-     movies: {
-
-     },
-     actors: {
-
-     },
-     genres: [],
-     privat: false
- };
+// start();
 
 
-function rememberMyFilms() {
-    for (let i = 0; i < 2; i++) {
-        const whatFilm = prompt('Один из последних просмотренных фильмов?', ''),
-            filmScore = prompt('На сколько оцените его', '');
-        if (whatFilm != null && whatFilm != '' && filmScore != null && filmScore != '' && whatFilm.length < 50) {
-            personalMovieDB.movies[whatFilm] = filmScore;
-            console.log('Done');
-        } else {
-            i--;
-            console.log('Error');
-        }
-    }
-}
-rememberMyFilms();
+//  let personalMovieDB = {
+//      count:numberOfFilms,
+//      movies: {
 
-function detectPersonalLevel() {
+//      },
+//      actors: {
 
-    console.log(personalMovieDB.count);
-    if (personalMovieDB.count < 10) {
-        console.log('Мало фильмов');
-    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-        console.log('Нормально!');
-    } else if (personalMovieDB.count >= 30) {
-        console.log('Ого как много');
-    } else {
-        console.log('Ошибка');
-    }
-}
-detectPersonalLevel();
+//      },
+//      genres: [],
+//      privat: false
+//  };
 
-function showMyDB () {
-    if (personalMovieDB.privat == false) {
-        console.log (personalMovieDB);
-    } else {
-        return;
-    }
-}
-showMyDB();
 
-function writeYourGenres () {
+// function rememberMyFilms() {
+//     for (let i = 0; i < 2; i++) {
+//         const whatFilm = prompt('Один из последних просмотренных фильмов?', ''),
+//             filmScore = prompt('На сколько оцените его', '');
+//         if (whatFilm != null && whatFilm != '' && filmScore != null && filmScore != '' && whatFilm.length < 50) {
+//             personalMovieDB.movies[whatFilm] = filmScore;
+//             console.log('Done');
+//         } else {
+//             i--;
+//             console.log('Error');
+//         }
+//     }
+// }
+// rememberMyFilms();
+
+// function detectPersonalLevel() {
+
+//     console.log(personalMovieDB.count);
+//     if (personalMovieDB.count < 10) {
+//         console.log('Мало фильмов');
+//     } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//         console.log('Нормально!');
+//     } else if (personalMovieDB.count >= 30) {
+//         console.log('Ого как много');
+//     } else {
+//         console.log('Ошибка');
+//     }
+// }
+// detectPersonalLevel();
+
+// function showMyDB () {
+//     if (personalMovieDB.privat === false) {
+//         console.log (personalMovieDB);
+//     } else {
+//         return;
+//     }
+// }
+// showMyDB();
+
+// function writeYourGenres () {
     
-    for (let i = 0; i<3; i++) {
-        let questionFavorite = prompt (`Ваш любимый жанр под номером ${i+1}? `,'');
-        personalMovieDB.genres[i] = questionFavorite;
+//     for (let i = 0; i<3; i++) {
+//         let questionFavorite = prompt (`Ваш любимый жанр под номером ${i+1}? `,'');
+//         personalMovieDB.genres[i] = questionFavorite;
+//     }
+// }
+
+// writeYourGenres();
+
+//  console.log(personalMovieDB);
+//Практика с* задача про куб
+"use strict";
+let result = 1;
+let dlinaRebra = +prompt ("Введите длину ребра куба", "");
+let taskKub = prompt ("Введите необходимую операцию: S - считает площадь куба, V - считает его объем", "");
+ 
+function calculateVolumeAndArea(rebro, zadacha) {
+    if (zadacha === 'V' && !isNaN(dlinaRebra)) {
+for (let i = 0; i<3; i++) {
+    result = result * rebro;
+}
+    } else if (zadacha === 'S' && !isNaN(dlinaRebra)) {
+        result = 6 * (rebro * rebro);
+    } else {
+        result = 'При вычислении произошла ошибка';
+        alert (result);
     }
 }
 
-writeYourGenres();
-
- console.log(personalMovieDB);
+calculateVolumeAndArea(dlinaRebra, taskKub);
+console.log (result);
+alert(`Ответ на вашу задачу - ${result}`);
+// calculateVolumeAndArea(3,'S');
+// console.log (result);
 
