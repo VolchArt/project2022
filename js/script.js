@@ -494,27 +494,60 @@
 
 //  console.log(personalMovieDB);
 //Практика с* задача про куб
-"use strict";
-let result = 1;
-let dlinaRebra = +prompt ("Введите длину ребра куба", "");
-let taskKub = prompt ("Введите необходимую операцию: S - считает площадь куба, V - считает его объем", "");
+// "use strict";
+// let result = 1;
+// let dlinaRebra = +prompt ("Введите длину ребра куба", "");
+// let taskKub = prompt ("Введите необходимую операцию: S - считает площадь куба, V - считает его объем", "");
  
-function calculateVolumeAndArea(rebro, zadacha) {
-    if (zadacha === 'V' && !isNaN(dlinaRebra)) {
-for (let i = 0; i<3; i++) {
-    result = result * rebro;
-}
-    } else if (zadacha === 'S' && !isNaN(dlinaRebra)) {
-        result = 6 * (rebro * rebro);
-    } else {
-        result = 'При вычислении произошла ошибка';
-        alert (result);
-    }
-}
+// function calculateVolumeAndArea(rebro, zadacha) {
+//     if (zadacha === 'V' && !isNaN(dlinaRebra)) {
+// for (let i = 0; i<3; i++) {
+//     result = result * rebro;
+// }
+//     } else if (zadacha === 'S' && !isNaN(dlinaRebra)) {
+//         result = 6 * (rebro * rebro);
+//     } else {
+//         result = 'При вычислении произошла ошибка';
+//         alert (result);
+//     }
+// }
 
-calculateVolumeAndArea(dlinaRebra, taskKub);
-console.log (result);
-alert(`Ответ на вашу задачу - ${result}`);
+// calculateVolumeAndArea(dlinaRebra, taskKub);
+// console.log (result);
+// alert(`Ответ на вашу задачу - ${result}`);
 // calculateVolumeAndArea(3,'S');
 // console.log (result);
 
+//УРОК 32 ОБЪЕКТЫ И ДЕСТРУКТУРИЗАЦИЯ
+"use strict";
+let numberOfFilms = 4;
+let personalMovieDB = {
+    count: numberOfFilms,
+    movies: {
+
+    },
+    actors: {
+
+    },
+    genres: [],
+    privat: false,
+    colors: {
+        bg: 'black',
+        border: 'green'
+    },
+    makeTest: function () {
+        console.log('Я работаю');
+    }
+};
+personalMovieDB.makeTest();
+for (let key in personalMovieDB) {
+    if (typeof (personalMovieDB[key]) === 'object') {
+        for (let i in personalMovieDB[key]) {
+            console.log(`Объект содержит Ключ ${i} и значение ${personalMovieDB[key][i]}`);
+        }
+
+    } else {
+        console.log(`Объект содержит Ключ ${key} и значение ${personalMovieDB[key]}`);
+    }
+}
+ //console.log(personalMovieDB.colors);
