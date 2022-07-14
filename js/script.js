@@ -559,37 +559,65 @@
 //  //console.log(personalMovieDB.colors);
 
  //Урок 33 Массивы и псевдомассивы
+// "use strict";
+// //перебор через цикл "of"
+// const arr = [1, 22, 14, 36, 8];
+// console.log('Цикл of');
+// for (let i of arr) {
+//     console.log(i);
+// }
+// //перебор через цикл обычный
+// console.log('Цикл обычный');
+// for (let k = 0; k<arr.length; k++) {
+
+//     console.log(arr[k]);
+// }
+
+// //перебор через метод
+// console.log('метод forEach');
+// arr.forEach(function (item, i, nameArray){
+//     console.log(`в массиве ${nameArray}, есть элемент ${item}, под номером ${i}`);
+// });
+
+// console.log('метод Sort');
+// arr.sort (compareNum);
+// function compareNum(a,b) {
+//     return a - b;
+// }
+// console.log (arr);
+
+// console.log('метод Join');
+// let str = arr.join (';');
+// console.log (str, arr);
+
+// console.log('метод split');
+// let arrFromStr = str.split (';');
+// console.log (arrFromStr, str);
+
+//Упражнение по написанию кода 10: задачи на работу с объектами
 "use strict";
-//перебор через цикл "of"
-const arr = [1, 22, 14, 36, 8];
-console.log('Цикл of');
-for (let i of arr) {
-    console.log(i);
+
+const personalPlanPeter = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%'
+        },
+        exp: '1 month'
+    }
+};
+
+function showExperience(plan) {
+    
+    let a
+
+    return;
 }
-//перебор через цикл обычный
-console.log('Цикл обычный');
-for (let k = 0; k<arr.length; k++) {
+console.log(showExperience());
+function showProgrammingLangs(plan) {
 
-    console.log(arr[k]);
 }
 
-//перебор через метод
-console.log('метод forEach');
-arr.forEach(function (item, i, nameArray){
-    console.log(`в массиве ${nameArray}, есть элемент ${item}, под номером ${i}`);
-});
-
-console.log('метод Sort');
-arr.sort (compareNum);
-function compareNum(a,b) {
-    return a - b;
-}
-console.log (arr);
-
-console.log('метод Join');
-let str = arr.join (';');
-console.log (str, arr);
-
-console.log('метод split');
-let arrFromStr = str.split (';');
-console.log (arrFromStr, str);
