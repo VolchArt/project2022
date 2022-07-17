@@ -668,36 +668,126 @@
 
 //ООП. Урок 36, прототипы и наследование
 
+// "use strict";
+
+// const personalPlanPeter = {
+//     name: "Peter",
+//     age: "29",
+//     skills: {
+//         languages: ['ru', 'eng'],
+//         programmingLangs: {
+//             js: '20%',
+//             php: '10%',
+//             ruby: '30%'
+//         },
+//         exp: '1 month'
+//     },
+//     metod: function(plan) {
+//         const {age} = plan;
+//         const {languages, programmingLangs, exp} = plan.skills;
+//         let a = `Мне ${age} и я владею языками: ${languages.join(' ').toUpperCase().trim()}`;
+//         return a;
+//     }
+// };
+
+// const personalPlanJohn = Object.create(personalPlanPeter);
+// personalPlanJohn.name = "John";
+// personalPlanJohn.age = 78;
+// console.log(personalPlanJohn.metod(personalPlanJohn));
+
+// const personalPlanSam = {
+//     name: "Sam"
+// };
+// Object.setPrototypeOf (personalPlanSam, personalPlanPeter)
+// console.log(personalPlanSam.metod(personalPlanSam));
+// console.log(personalPlanSam.name);
+
+//Практика 37. Использование объектов
 "use strict";
 
-const personalPlanPeter = {
-    name: "Peter",
-    age: "29",
-    skills: {
-        languages: ['ru', 'eng'],
-        programmingLangs: {
-            js: '20%',
-            php: '10%',
-            ruby: '30%'
-        },
-        exp: '1 month'
+ const questions = ['Сколько фильмов вы уже посмотрели?',
+     'Один из последних просмотренных фильмов?',
+     'На сколько оцените его?'
+ ];
+
+let numberOfFilms;
+
+ let personalMovieDB = {
+     count:numberOfFilms,
+     movies: {
+
+     },
+     actors: {
+
+     },
+     genres: [],
+     privat: false,
+     start: function() {
+        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели', '');
+        while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+            numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели', '');
+        }
     },
-    metod: function(plan) {
-        const {age} = plan;
-        const {languages, programmingLangs, exp} = plan.skills;
-        let a = `Мне ${age} и я владею языками: ${languages.join(' ').toUpperCase().trim()}`;
-        return a;
+    rememberMyFilms: function() {
+        for (let i = 0; i < 2; i++) {
+            const whatFilm = prompt('Один из последних просмотренных фильмов?', ''),
+                filmScore = prompt('На сколько оцените его', '');
+            if (whatFilm != null && whatFilm != '' && filmScore != null && filmScore != '' && whatFilm.length < 50) {
+                personalMovieDB.movies[whatFilm] = filmScore;
+                console.log('Done');
+            } else {
+                i--;
+                console.log('Error');
+            }
+        }
+    },
+    detectPersonalLevel: function() {
+        console.log(personalMovieDB.count);
+        if (personalMovieDB.count < 10) {
+            console.log('Мало фильмов');
+        } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+            console.log('Нормально!');
+        } else if (personalMovieDB.count >= 30) {
+            console.log('Ого как много');
+        } else {
+            console.log('Ошибка');
+        }
+    },
+    showMyDB: function (){
+        if (personalMovieDB.privat === false) {
+            console.log (personalMovieDB);
+        } else {
+            return;
+        }
+    },
+    writeYourGenres: function () {
+        for (let i = 0; i < 3; i++) {
+            let questionFavorite = prompt(`Ваш любимый жанр под номером ${i+1}? `, '');
+            personalMovieDB.genres[i] = questionFavorite;
+            if (questionFavorite != null && questionFavorite != '') {
+                console.log('OK');
+            } else {
+                i--;
+                console.log('nOK');
+            }
+        }
+        personalMovieDB.genres.forEach((item,i) => {
+            console.log(`Любимый жанр ${i} - это ${item}`);
+
+        });
+    },
+    toggleVisibleMyDB: function(){
+        if (personalMovieDB.privat === false) {
+            personalMovieDB.privat = true;
+        } else {
+            personalMovieDB.privat = false;
+        }
     }
-};
+ };
 
-const personalPlanJohn = Object.create(personalPlanPeter);
-personalPlanJohn.name = "John";
-personalPlanJohn.age = 78;
-console.log(personalPlanJohn.metod(personalPlanJohn));
+personalMovieDB.rememberMyFilms();
+personalMovieDB.toggleVisibleMyDB();
+personalMovieDB.writeYourGenres();
+personalMovieDB.showMyDB();
 
-const personalPlanSam = {
-    name: "Sam"
-};
-Object.setPrototypeOf (personalPlanSam, personalPlanPeter)
-console.log(personalPlanSam.metod(personalPlanSam));
-console.log(personalPlanSam.name);
+ console.log(personalMovieDB);
