@@ -604,20 +604,38 @@ const personalPlanPeter = {
         languages: ['ru', 'eng'],
         programmingLangs: {
             js: '20%',
-            php: '10%'
+            php: '10%',
+            ruby: '30%'
         },
         exp: '1 month'
+    },
+    metod: function(plan) {
+        const {age} = plan;
+        const {languages, programmingLangs, exp} = plan.skills;
+        let a = `Мне ${age} и я владею языками: ${languages.join(' ').toUpperCase().trim()}`;
+        return a;
     }
 };
 
+console.log(personalPlanPeter.metod(personalPlanPeter));
+
+
 function showExperience(plan) {
-    
-    let a
+    const {languages, programmingLangs, exp} = plan.skills;
+    console.log(plan);
+    return exp;
 
-    return;
 }
-console.log(showExperience());
+console.log(showExperience(personalPlanPeter));
+
 function showProgrammingLangs(plan) {
-
+    const {languages, programmingLangs, exp} = plan.skills;
+    console.log(plan);
+    let a = '';
+    for (let key in programmingLangs) {
+        a += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
+    }
+    
+    return a;
 }
-
+console.log(showProgrammingLangs(personalPlanPeter));
