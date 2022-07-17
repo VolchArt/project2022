@@ -641,27 +641,63 @@
 // console.log(showProgrammingLangs(personalPlanPeter));
 
 //Практика с массивами
-"Use strict";
-const family = ['Peter', 'Ann', 'Alex', 'Linda'];
-//console.log(family.length);
-function showFamily(arr) {
-    let a ='';
-    if (arr.length === 0) {
- a = 'Семья пуста';
-    } else {
-    a = `Семья состоит из: ${arr.join(' ').trim()}`;
-    }
-    return a;
-}
+// "Use strict";
+// const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+// //console.log(family.length);
+// function showFamily(arr) {
+//     let a ='';
+//     if (arr.length === 0) {
+//  a = 'Семья пуста';
+//     } else {
+//     a = `Семья состоит из: ${arr.join(' ').trim()}`;
+//     }
+//     return a;
+// }
 
-const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+// const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
 
-function standardizeStrings(arr) {
-    let a ='';
-    for (let key of arr) {
-        a += `${[key]}\n`;
+// function standardizeStrings(arr) {
+//     let a ='';
+//     for (let key of arr) {
+//         a += `${[key]}\n`;
+//     }
+// return a.toLowerCase();
+// }
+// console.log(standardizeStrings(favoriteCities));
+// //console.log(showFamily(family));
+
+//ООП. Урок 36, прототипы и наследование
+
+"use strict";
+
+const personalPlanPeter = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%',
+            ruby: '30%'
+        },
+        exp: '1 month'
+    },
+    metod: function(plan) {
+        const {age} = plan;
+        const {languages, programmingLangs, exp} = plan.skills;
+        let a = `Мне ${age} и я владею языками: ${languages.join(' ').toUpperCase().trim()}`;
+        return a;
     }
-return a.toLowerCase();
-}
-console.log(standardizeStrings(favoriteCities));
-//console.log(showFamily(family));
+};
+
+const personalPlanJohn = Object.create(personalPlanPeter);
+personalPlanJohn.name = "John";
+personalPlanJohn.age = 78;
+console.log(personalPlanJohn.metod(personalPlanJohn));
+
+const personalPlanSam = {
+    name: "Sam"
+};
+Object.setPrototypeOf (personalPlanSam, personalPlanPeter)
+console.log(personalPlanSam.metod(personalPlanSam));
+console.log(personalPlanSam.name);
