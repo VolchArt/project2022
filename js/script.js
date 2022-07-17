@@ -710,10 +710,8 @@
      'На сколько оцените его?'
  ];
 
-let numberOfFilms;
-
  let personalMovieDB = {
-     count:numberOfFilms,
+     count:0,
      movies: {
 
      },
@@ -723,9 +721,9 @@ let numberOfFilms;
      genres: [],
      privat: false,
      start: function() {
-        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели', '');
-        while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-            numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели', '');
+        personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели', '');
+        while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
+            personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели', '');
         }
     },
     rememberMyFilms: function() {
@@ -761,6 +759,7 @@ let numberOfFilms;
         }
     },
     writeYourGenres: function () {
+        
         for (let i = 0; i < 3; i++) {
             let questionFavorite = prompt(`Ваш любимый жанр под номером ${i+1}? `, '');
             personalMovieDB.genres[i] = questionFavorite;
@@ -770,21 +769,33 @@ let numberOfFilms;
                 i--;
                 console.log('nOK');
             }
+                        // Альтернативный вариант из урока
+            
+            // let genres = prompt(`Введите ваши любимые жанры через запятую`).toLowerCase();
+
+            // if (genres === '' || genres == null) {
+            //     console.log('Вы ввели некорректные данные или не ввели их вовсе');
+            //     i--;
+            // } else {
+            //     personalMovieDB.genres = genres.split(', ');
+            //     personalMovieDB.genres.sort();
+            // } 
         }
         personalMovieDB.genres.forEach((item,i) => {
-            console.log(`Любимый жанр ${i} - это ${item}`);
+            console.log(`Любимый жанр ${i+1} - это ${item}`);
 
         });
     },
     toggleVisibleMyDB: function(){
-        if (personalMovieDB.privat === false) {
-            personalMovieDB.privat = true;
-        } else {
+        if (personalMovieDB.privat) {
             personalMovieDB.privat = false;
+        } else {
+            personalMovieDB.privat = true;
         }
     }
  };
 
+personalMovieDB.start();
 personalMovieDB.rememberMyFilms();
 personalMovieDB.toggleVisibleMyDB();
 personalMovieDB.writeYourGenres();
