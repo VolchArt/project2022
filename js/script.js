@@ -703,102 +703,165 @@
 // console.log(personalPlanSam.name);
 
 //Практика 37. Использование объектов
-"use strict";
+// "use strict";
 
- const questions = ['Сколько фильмов вы уже посмотрели?',
-     'Один из последних просмотренных фильмов?',
-     'На сколько оцените его?'
- ];
+//  const questions = ['Сколько фильмов вы уже посмотрели?',
+//      'Один из последних просмотренных фильмов?',
+//      'На сколько оцените его?'
+//  ];
 
- let personalMovieDB = {
-     count:0,
-     movies: {
+//  let personalMovieDB = {
+//      count:0,
+//      movies: {
 
-     },
-     actors: {
+//      },
+//      actors: {
 
-     },
-     genres: [],
-     privat: false,
-     start: function() {
-        personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели', '');
-        while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
-            personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели', '');
-        }
-    },
-    rememberMyFilms: function() {
-        for (let i = 0; i < 2; i++) {
-            const whatFilm = prompt('Один из последних просмотренных фильмов?', ''),
-                filmScore = prompt('На сколько оцените его', '');
-            if (whatFilm != null && whatFilm != '' && filmScore != null && filmScore != '' && whatFilm.length < 50) {
-                personalMovieDB.movies[whatFilm] = filmScore;
-                console.log('Done');
-            } else {
-                i--;
-                console.log('Error');
-            }
-        }
-    },
-    detectPersonalLevel: function() {
-        console.log(personalMovieDB.count);
-        if (personalMovieDB.count < 10) {
-            console.log('Мало фильмов');
-        } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-            console.log('Нормально!');
-        } else if (personalMovieDB.count >= 30) {
-            console.log('Ого как много');
-        } else {
-            console.log('Ошибка');
-        }
-    },
-    showMyDB: function (){
-        if (personalMovieDB.privat === false) {
-            console.log (personalMovieDB);
-        } else {
-            return;
-        }
-    },
-    writeYourGenres: function () {
+//      },
+//      genres: [],
+//      privat: false,
+//      start: function() {
+//         personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели', '');
+//         while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
+//             personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели', '');
+//         }
+//     },
+//     rememberMyFilms: function() {
+//         for (let i = 0; i < 2; i++) {
+//             const whatFilm = prompt('Один из последних просмотренных фильмов?', ''),
+//                 filmScore = prompt('На сколько оцените его', '');
+//             if (whatFilm != null && whatFilm != '' && filmScore != null && filmScore != '' && whatFilm.length < 50) {
+//                 personalMovieDB.movies[whatFilm] = filmScore;
+//                 console.log('Done');
+//             } else {
+//                 i--;
+//                 console.log('Error');
+//             }
+//         }
+//     },
+//     detectPersonalLevel: function() {
+//         console.log(personalMovieDB.count);
+//         if (personalMovieDB.count < 10) {
+//             console.log('Мало фильмов');
+//         } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+//             console.log('Нормально!');
+//         } else if (personalMovieDB.count >= 30) {
+//             console.log('Ого как много');
+//         } else {
+//             console.log('Ошибка');
+//         }
+//     },
+//     showMyDB: function (){
+//         if (personalMovieDB.privat === false) {
+//             console.log (personalMovieDB);
+//         } else {
+//             return;
+//         }
+//     },
+//     writeYourGenres: function () {
         
-        for (let i = 0; i < 3; i++) {
-            let questionFavorite = prompt(`Ваш любимый жанр под номером ${i+1}? `, '');
-            personalMovieDB.genres[i] = questionFavorite;
-            if (questionFavorite != null && questionFavorite != '') {
-                console.log('OK');
-            } else {
-                i--;
-                console.log('nOK');
-            }
-                        // Альтернативный вариант из урока
+//         for (let i = 0; i < 3; i++) {
+//             let questionFavorite = prompt(`Ваш любимый жанр под номером ${i+1}? `, '');
+//             personalMovieDB.genres[i] = questionFavorite;
+//             if (questionFavorite != null && questionFavorite != '') {
+//                 console.log('OK');
+//             } else {
+//                 i--;
+//                 console.log('nOK');
+//             }
+//                         // Альтернативный вариант из урока
             
-            // let genres = prompt(`Введите ваши любимые жанры через запятую`).toLowerCase();
+//             // let genres = prompt(`Введите ваши любимые жанры через запятую`).toLowerCase();
 
-            // if (genres === '' || genres == null) {
-            //     console.log('Вы ввели некорректные данные или не ввели их вовсе');
-            //     i--;
-            // } else {
-            //     personalMovieDB.genres = genres.split(', ');
-            //     personalMovieDB.genres.sort();
-            // } 
-        }
-        personalMovieDB.genres.forEach((item,i) => {
-            console.log(`Любимый жанр ${i+1} - это ${item}`);
+//             // if (genres === '' || genres == null) {
+//             //     console.log('Вы ввели некорректные данные или не ввели их вовсе');
+//             //     i--;
+//             // } else {
+//             //     personalMovieDB.genres = genres.split(', ');
+//             //     personalMovieDB.genres.sort();
+//             // } 
+//         }
+//         personalMovieDB.genres.forEach((item,i) => {
+//             console.log(`Любимый жанр ${i+1} - это ${item}`);
 
-        });
-    },
-    toggleVisibleMyDB: function(){
-        if (personalMovieDB.privat) {
-            personalMovieDB.privat = false;
-        } else {
-            personalMovieDB.privat = true;
+//         });
+//     },
+//     toggleVisibleMyDB: function(){
+//         if (personalMovieDB.privat) {
+//             personalMovieDB.privat = false;
+//         } else {
+//             personalMovieDB.privat = true;
+//         }
+//     }
+//  };
+
+// personalMovieDB.start();
+// personalMovieDB.rememberMyFilms();
+// personalMovieDB.toggleVisibleMyDB();
+// personalMovieDB.writeYourGenres();
+// personalMovieDB.showMyDB();
+
+//  console.log(personalMovieDB);
+
+"use strict";
+const restorantData = {
+    menu: [
+        {
+            name: 'Salad Caesar',
+            price: '14$'
+        },
+        {
+            name: 'Pizza Diavola',
+            price: '9$'
+        },
+        {
+            name: 'Beefsteak',
+            price: '17$'
+        },
+        {
+            name: 'Napoleon',
+            price: '7$'
         }
+    ],
+    waitors: [
+        {name: 'Alice', age: 22}, {name: 'John', age: 24}
+    ],
+    averageLunchPrice: '20$',
+    openNow: true
+};
+
+function isOpen(prop) {
+    let answer = '';
+    prop ? answer = 'Открыто' : answer = 'Закрыто';
+
+    return answer;
+}
+
+console.log(isOpen(restorantData.openNow));
+
+function isAverageLunchPriceTrue(fDish, sDish, average) {
+    if ((+fDish.price.slice(0,-1) + (+sDish.price.slice(0,-1))) < +average.slice(0,-1)) {
+        //console.log(+fDish.price.slice(0,-1));
+        return 'Цена ниже средней';
+        
+    } else {
+        //console.log(+fDish.price.slice(0,-1));
+        return 'Цена выше средней';
+        
     }
- };
+}
 
-personalMovieDB.start();
-personalMovieDB.rememberMyFilms();
-personalMovieDB.toggleVisibleMyDB();
-personalMovieDB.writeYourGenres();
-personalMovieDB.showMyDB();
+console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1], restorantData.averageLunchPrice));
 
- console.log(personalMovieDB);
+function transferWaitors(data) {
+    const copy = Object.assign({}, data);
+
+    // Нам просто нужно менять весь массив данных,
+    // а не лезть напрямую менять каждого из сотрудников
+    // Так как это верхний уровень объекта, то значение 
+    // будет меняться только у копии
+    copy.waitors = [{name: 'Mike', age: 32}];
+    return copy;
+}
+
+console.log(transferWaitors(restorantData));
